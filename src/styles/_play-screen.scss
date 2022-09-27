@@ -1,0 +1,10 @@
+.play-screen {
+  padding: 64px 0;
+  
+  &-grid {
+    display:grid;
+    grid-template-columns: repeat();
+    justify-content:center;
+    gap: 16px;
+  }
+}

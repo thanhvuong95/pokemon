@@ -1,0 +1,56 @@
+.card {
+  display: inline-block;
+  width: 100%;
+  height: 150px;
+  $rounded : 6px;
+
+  &-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    border-radius: $rounded;
+
+    &.flipped {
+      rotate: y -180deg ;
+    }
+  }
+
+  &-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: $rounded;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    &.hidden {
+      box-shadow: none;
+    }
+
+    &--front div {
+      width: 60%;
+      height: 100%;
+      margin: 0 auto;
+      background-image: url(../assets/images/icon_back.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+    &--back {
+      rotate: y 180deg;
+
+      div {
+        transition: all linear 1s;
+      }
+
+      &.hidden div{
+        opacity: 0;
+      }
+    }
+  }
+
+}
